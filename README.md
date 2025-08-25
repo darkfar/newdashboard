@@ -22,7 +22,7 @@ Pastikan sistem Anda memenuhi persyaratan berikut:
 
 
 # Clone repository
-git clone https://github.com/your-username/bike-sharing-dashboard.git
+git clone https://github.com/darkfar/newdashboard.git
 cd bike-sharing-dashboard
 
 
