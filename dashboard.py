@@ -462,7 +462,26 @@ def create_enhanced_visualizations(day_df, hour_df):
 def main():
     # Load data
     day_df, hour_df = load_data()
-    
+       # --- Date Filtering ---
+    st.sidebar.header("📅 Date Filtering")
+
+    min_date = day_df['dteday'].min().date()
+    max_date = day_df['dteday'].max().date()
+
+    start_date, end_date = st.sidebar.date_input(
+        "Select Date Range",
+        [min_date, max_date],
+        min_value=min_date,
+        max_value=max_date
+    )
+
+    # Pastikan format sesuai
+    if isinstance(start_date, tuple) or isinstance(start_date, list):
+        start_date, end_date = start_date
+
+    # Filter dataset
+    day_df = day_df[(day_df['dteday'].dt.date >= start_date) & 
+                    (day_df['dteday'].dt.date <= end_date)]
     # Header
     st.markdown('<h1 class="main-header">🚴‍♂️ Enhanced Bike Sharing Analytics Dashboard</h1>', unsafe_allow_html=True)
     st.markdown(
