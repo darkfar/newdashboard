@@ -437,7 +437,6 @@ def create_enhanced_visualizations(day_df, hour_df):
             values=user_comparison.values,
             names=['Casual Users', 'Registered Users'],
             title="User Type Distribution",
-              font=dict(color='black'),
             color_discrete_sequence=[COLORS['secondary'], COLORS['primary']]
         )
         fig_users.update_traces(textposition='inside', textinfo='percent+label')
