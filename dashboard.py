@@ -355,10 +355,11 @@ def create_enhanced_visualizations(day_df, hour_df):
             text='cnt'
         )
         fig_season.update_traces(
-            marker_color=colors,
-            texttemplate='%{text:.0f}', 
-            textposition='outside'
-        )
+        marker_color=colors,
+        texttemplate='%{text:.0f}', 
+        textposition='outside',
+        textfont_color='black'  # TAMBAHKAN INI
+       )
         fig_season.update_layout(
             plot_bgcolor='white',
             paper_bgcolor='white',
