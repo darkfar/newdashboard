@@ -253,6 +253,8 @@ def perform_time_based_clustering(day_df):
                 yaxis_title="Number of Days",
                 barmode='stack',
                 plot_bgcolor='white',
+                font=dict(color='black')
+,
                 paper_bgcolor='white'
             )
             st.plotly_chart(fig_cluster_time, use_container_width=True)
@@ -363,7 +365,8 @@ def create_enhanced_visualizations(day_df, hour_df):
         fig_season.update_layout(
             plot_bgcolor='white',
             paper_bgcolor='white',
-            showlegend=False
+            showlegend=False,
+             font=dict(color='black')
         )
         st.plotly_chart(fig_season, use_container_width=True)
     
@@ -385,6 +388,8 @@ def create_enhanced_visualizations(day_df, hour_df):
         fig_weather.update_layout(
             plot_bgcolor='white',
             paper_bgcolor='white',
+            font=dict(color='black')
+,
             showlegend=False
         )
         fig_weather.update_xaxes(tickangle=45)
@@ -416,6 +421,7 @@ def create_enhanced_visualizations(day_df, hour_df):
             xaxis_title="Day of Week",
             yaxis_title="Average Rentals",
             plot_bgcolor='white',
+             font=dict(color='black') ,
             paper_bgcolor='white'
         )
         st.plotly_chart(fig_weekly, use_container_width=True)
@@ -431,6 +437,7 @@ def create_enhanced_visualizations(day_df, hour_df):
             values=user_comparison.values,
             names=['Casual Users', 'Registered Users'],
             title="User Type Distribution",
+              font=dict(color='black'),
             color_discrete_sequence=[COLORS['secondary'], COLORS['primary']]
         )
         fig_users.update_traces(textposition='inside', textinfo='percent+label')
@@ -456,6 +463,8 @@ def create_enhanced_visualizations(day_df, hour_df):
         
         fig_corr.update_layout(
             plot_bgcolor='white',
+            font=dict(color='black')
+,
             paper_bgcolor='white'
         )
         st.plotly_chart(fig_corr, use_container_width=True)
